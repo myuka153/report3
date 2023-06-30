@@ -42,13 +42,12 @@
         // グループを作成
         const group = new THREE.Group();
         scene.add(group);
-        const geometry = new THREE.BoxGeometry();
-        //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-        const material = new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/kyoro.png")});
+        //const geometry = new THREE.BoxGeometry();
+        const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
+        const material = new THREE.MeshStandardMaterial();
 
         for (let i = 0; i < 1000; i++) {
           const mesh = new THREE.Mesh(geometry, material);
-          mesh.scale.set(0.05,0.05,0.05);
           mesh.position.x = (Math.random() - 0.5) * 2000;
           mesh.position.y = (Math.random() - 0.5) * 2000;
           mesh.position.z = (Math.random() - 0.5) * 2000;
