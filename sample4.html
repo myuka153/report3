@@ -39,6 +39,13 @@
         const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
+        //fbxファイルの読み込み
+ 
+        const loader = new FBXLoader();
+        loader.load( 'img/sakurahanabira.fbx', function ( object ) {
+        object.scale.set(1, 1, 1)
+        }
+
         // グループを作成
         const group = new THREE.Group();
         scene.add(group);
