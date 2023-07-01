@@ -56,7 +56,7 @@
         //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
         //const material = new THREE.MeshStandardMaterial();
 
-        for (let i = 0; i < 1000; i++) {
+        /*for (let i = 0; i < 1000; i++) {
           const mesh = new THREE.Mesh(object);
           mesh.position.x = (Math.random() - 0.5) * 2000;
           mesh.position.y = (Math.random() - 0.5) * 2000;
@@ -66,7 +66,9 @@
           mesh.rotation.z = Math.random() * 2 * Math.PI;
           // グループに格納する
           group.add(mesh);
-        }
+        }*/
+        object.position.set(0,0,0);
+        group.add(object);
 
      
       　 // 光源（環境光）
