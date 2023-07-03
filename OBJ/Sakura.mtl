@@ -1,0 +1,46 @@
+# Blender MTL File: 'Sakura.blend'
+# Material Count: 4
+
+newmtl Sakura1
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd \\\\MIKI-CHUNGUS\\SusiBarStudios-Internal\\Lejla\\MarketplaceObjects\\Sakura\\Resources\\SakuraMaterial\\Sakura1.png
+map_d \\\\MIKI-CHUNGUS\\SusiBarStudios-Internal\\Lejla\\MarketplaceObjects\\Sakura\\Resources\\SakuraMaterial\\Sakura1.png
+
+newmtl Sakura2
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd \\\\MIKI-CHUNGUS\\SusiBarStudios-Internal\\Lejla\\MarketplaceObjects\\Sakura\\Resources\\SakuraMaterial\\Sakura2.png
+map_d \\\\MIKI-CHUNGUS\\SusiBarStudios-Internal\\Lejla\\MarketplaceObjects\\Sakura\\Resources\\SakuraMaterial\\Sakura2.png
+
+newmtl seed1
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl stem
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
