@@ -48,18 +48,19 @@
 
         var color = new THREE.Color( 0xFFB6C1 );
         
-          const objLoader = new THREE.OBJLoader();
+          
 
         
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 50; i++) {
+          const objLoader = new THREE.OBJLoader();
           objLoader.load(
               'obj/heart.obj',
               function (obj) {
                   obj.rotation.x = -Math.PI/2; 
                   obj.scale.set(3,3,3);
-                  obj.position.x = (Math.random() - 0.5) * 2000;
-                  obj.position.y = (Math.random() - 0.5) * 2000;
-                  obj.position.z = (Math.random() - 0.5) * 2000;
+                  obj.position.x = (Math.random() - 0.5) * 200;
+                  obj.position.y = (Math.random() - 0.5) * 200;
+                  obj.position.z = (Math.random() - 0.5) * 200;
                   // グループに格納する
                   group.add(obj);
               },
