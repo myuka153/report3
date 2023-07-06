@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
-    <script src="https://unpkg.com/three@0.147.0/examples/js/loaders/OBJLoader.js"></script>
+    <script src="https://unpkg.com/three@0.147.0/examples/js/loaders/FBXLoader.js"></script>
    
     <script>
       // ページの読み込みを待つ
@@ -46,13 +46,14 @@
         const group = new THREE.Group();
         scene.add(group);
         
-          const objLoader = new THREE.OBJLoader();
-          objLoader.load(
-              'petal/petal.obj',
-              function (obj) {
+          const fbxLoader = new THREE.FBXLoader();
+          fbxLoader.load(
+              'petal/petal.fbx',
+              function (fbx) {
                   scene.add(obj);
-                  obj.position.x = -50;
-                  obj.position.y = -100;
+                  obj.position.x =0;
+                  obj.position.y =0;
+                  color:0xFFB6C1;
               },
           );
       
