@@ -45,16 +45,16 @@
         // グループを作成
         const group = new THREE.Group();
         scene.add(group);
+
+        var color = new THREE.Color( 0xFFB6C1 );
         
           const objLoader = new THREE.OBJLoader();
           objLoader.load(
               'obj/heart.obj',
               function (obj) {
                   scene.add(obj);
-                  obj.position.x =0;
-                  obj.position.y =0;
-                  obj.rotation.x = Math.PI/2; 
-                  color:0xFFB6C1;
+                  obj.rotation.x = Math.PI; 
+                  MeshBasicMaterial.color = color;
               },
           );
       
