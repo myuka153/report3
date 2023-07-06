@@ -43,12 +43,16 @@
         const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
+        // グループを作成
+        const group = new THREE.Group();
+        scene.add(group);
+        
          const geometry = new THREE.Geometry();
          const material = new THREE.PointsMaterial({
              //pointsを使用する場合はMaterialのサイズで調整する
              size:0.1,
              map:THREE.ImageUtils.loadTexture("img/hanabira.png")
-             vertexColors:true
+           
          });
         
          const range = 1000;
@@ -80,7 +84,7 @@
         // 毎フレーム時に実行されるループイベントです
         function tick() {
           // レンダリング
-         // group.rotateY(0.01);
+          group.rotateY(0.01);
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
         }
