@@ -51,11 +51,10 @@
         
          for (let i = 0; i < range; i++) {
         
-              let pos = getPostion(
-                  Math.random() * width,
-                  Math.random() * height,
-                  Math.random() * width
-              );
+              pos.x =  Math.random() * width,
+              pos.y =  Math.random() * height,
+              pos.z =  Math.random() * width
+              
         
               //頂点データを生成
               let particle = new THREE.Vector3(pos.x,pos.y,pos.z);
