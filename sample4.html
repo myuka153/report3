@@ -3,6 +3,7 @@
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.147.0/examples/js/loaders/OBJLoader.js"></script>
    
     <script>
       // ページの読み込みを待つ
@@ -34,8 +35,6 @@
         const controls = new THREE.OrbitControls(camera);
         controls.autoRotate = true;
 
-
-        loader = new THREE.TextureLoader();
         
         // helper
         const gridHelper = new THREE.GridHelper(1000,20); // size, step
@@ -47,27 +46,17 @@
         const group = new THREE.Group();
         scene.add(group);
         
-         const geometry = new THREE.Geometry();
-         const material = new THREE.PointsMaterial({
-             //pointsを使用する場合はMaterialのサイズで調整する
-             //size:0.1,
-             //map:THREE.ImageUtils.loadTexture("img/hanabira.png")
-           color: 0x0000ff
-           
-         });
-        
-         const range = 1000;
-        
-         for (let i = 0; i < range; i++) {
-            point = new THREE.Points(geometry,material);
-            point.position.x = (Math.random() - 0.5) * 2000;
-            point.position.y = (Math.random() - 0.5) * 2000;
-            point.position.z = (Math.random() - 0.5) * 2000;
-            point.rotation.x = Math.random() * 2 * Math.PI;
-            point.rotation.y = Math.random() * 2 * Math.PI;
-            point.rotation.z = Math.random() * 2 * Math.PI;
-            scene.add(point);
-         }
+          const objLoader = new THREE.OBJLoader();
+          objLoader.load(
+              '/petal/petal.obj',
+              function (obj) {
+                  scene.add(obj);
+                  obj.position.x = -50;
+                  obj.position.y = -100;
+              },
+          );
+      
+          tick();
        
         　 // 光源（環境光）
           const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
