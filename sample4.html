@@ -49,15 +49,21 @@
         var color = new THREE.Color( 0xFFB6C1 );
         
           const objLoader = new THREE.OBJLoader();
-          objLoader.load(
+          const heart = objLoader.load(
               'obj/heart.obj',
               function (obj) {
-                  scene.add(obj);
                   obj.rotation.x = -Math.PI/2; 
                   MeshBasicMaterial.color = color;
                   obj.scale.set(10,10,10);
               },
           );
+        for (let i = 0; i < 1000; i++) {
+          heart.position.x = (Math.random() - 0.5) * 2000;
+          heart.position.y = (Math.random() - 0.5) * 2000;
+          heart.position.z = (Math.random() - 0.5) * 2000;
+          // グループに格納する
+          group.add(heart);
+        }
       
           tick();
        
