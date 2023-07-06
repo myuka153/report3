@@ -34,45 +34,35 @@
         const controls = new THREE.OrbitControls(camera);
         controls.autoRotate = true;
 
+
+        loader = new THREE.TextureLoader();
+        
         // helper
         const gridHelper = new THREE.GridHelper(1000,20); // size, step
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
-          let geometry = new THREE.Geometry();
-         let material = new THREE.PointsMaterial({
+         const geometry = new THREE.Geometry();
+         const material = new THREE.PointsMaterial({
              //pointsを使用する場合はMaterialのサイズで調整する
              size:0.1,
+             
              vertexColors:true
          });
         
-         let range = 1000;
+         const range = 1000;
         
          for (let i = 0; i < range; i++) {
-        
-              pos.x =  Math.random() * width,
-              pos.y =  Math.random() * height,
-              pos.z =  Math.random() * width
-              
-        
-              //頂点データを生成
-              let particle = new THREE.Vector3(pos.x,pos.y,pos.z);
-        
-              //頂点色を設定
-              let color = new THREE.Color(0xffff);
-                        
-              //頂点データをジオメトリに追加
-              geometry.vertices.push(particle);
-        
-              //頂点色をジオメトリに追加
-              geometry.colors.push(color);
-        
+            point = new THREE.Points(geometry,material);
+            point.position.x = (Math.random() - 0.5) * 2000;
+            point.position.y = (Math.random() - 0.5) * 2000;
+            point.position.z = (Math.random() - 0.5) * 2000;
+            point.rotation.x = Math.random() * 2 * Math.PI;
+            point.rotation.y = Math.random() * 2 * Math.PI;
+            point.rotation.z = Math.random() * 2 * Math.PI;
+            scene.add(point);
          }
-  
-          point = new THREE.Points(geometry,material);
-          scene.add(point);
-  
        
         　 // 光源（環境光）
           const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
