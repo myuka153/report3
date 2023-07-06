@@ -51,13 +51,13 @@
           
 
         
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 20; i++) {
           const objLoader = new THREE.OBJLoader();
           objLoader.load(
               'obj/heart.obj',
               function (obj) {
                   obj.rotation.x = -Math.PI/2; 
-                  obj.scale.set(10,10,10);
+                  obj.scale.set(8,8,8);
                   obj.position.x = (Math.random() - 0.5) * 1000;
                   obj.position.y = (Math.random() - 0.5) * 1000;
                   obj.position.z = (Math.random() - 0.5) * 1000;
