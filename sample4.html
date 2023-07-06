@@ -3,10 +3,21 @@
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
-    <script >import {FBXLoader}from'three/examples/jsm/loaders/FBXLOader'</script>
+   <script type="importmap">
+			{
+				"imports": {
+					"three": "../build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
     <script>
       // ページの読み込みを待つ
       window.addEventListener('load', init);
+
+      import * as THREE from 'three';
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      import {FBXLoader}from'three/addons/loaders/FBXLOader'
 
       
 
