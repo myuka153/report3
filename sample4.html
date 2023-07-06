@@ -54,16 +54,15 @@
               function (obj) {
                   obj.rotation.x = -Math.PI/2; 
                   obj.scale.set(3,3,3);
-
-                for (let i = 0; i < 100; i++) {
-                  obj.position.x = (Math.random() - 0.5) * 200;
-                  obj.position.y = (Math.random() - 0.5) * 200;
-                  obj.position.z = (Math.random() - 0.5) * 200;
-                  // グループに格納する
-                  group.add(obj);
-                }
               },
           );
+        for (let i = 0; i < 100; i++) {
+           objLoader.position.x = (Math.random() - 0.5) * 200;
+           objLoader.position.y = (Math.random() - 0.5) * 200;
+           objLoader.position.z = (Math.random() - 0.5) * 200;
+           // グループに格納する
+           group.add(objLoader);
+         }
         
       
           tick();
