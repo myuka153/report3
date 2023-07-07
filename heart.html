@@ -59,7 +59,7 @@
           objLoader.load(
               'obj/heart.obj',
               function (obj) {
-                  const obj = new THREE.SpriteMaterial({ map: texture,});
+                  //const obj = new THREE.SpriteMaterial({ map: texture,});
                   obj.rotation.x = -Math.PI/2; 
                   obj.scale.set(8,8,8);
                   obj.position.x = (Math.random() - 0.5) * 1000;
@@ -68,6 +68,8 @@
                   // グループに格納する
                   group.add(obj);
               },
+             const objLoader = new THREE.SpriteMaterial({ map: texture,});
+             group.add(objLoader);
           );
          
         }
