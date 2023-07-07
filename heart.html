@@ -50,7 +50,7 @@
         
 
         // テクスチャの読み込み
-        const textureLoader = new THREE.TextureLoader(manager);
+        const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load('img/heart1.jpg');
 
         
@@ -59,6 +59,7 @@
           objLoader.load(
               'obj/heart.obj',
               function (obj) {
+                  obj = new THREE.SpriteMaterial({ map: texture,}
                   obj.rotation.x = -Math.PI/2; 
                   obj.scale.set(8,8,8);
                   obj.position.x = (Math.random() - 0.5) * 1000;
