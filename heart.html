@@ -24,7 +24,7 @@
         const scene = new THREE.Scene();
 
         // フォグを設定
-        scene.fog = new THREE.Fog(0x000000, 50, 2000);
+        scene.fog = new THREE.Fog(0xB0E0E6, 50, 2000);
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
@@ -48,7 +48,10 @@
 
         var color = new THREE.Color( 0xFFB6C1 );
         
-          
+
+        // テクスチャの読み込み
+        const textureLoader = new THREE.TextureLoader(manager);
+        const texture = textureLoader.load('img/heart1.jpg');
 
         
         for (let i = 0; i < 20; i++) {
@@ -56,6 +59,7 @@
           objLoader.load(
               'obj/heart.obj',
               function (obj) {
+                  if (obj.isMesh) obj.material.map = texture;
                   obj.rotation.x = -Math.PI/2; 
                   obj.scale.set(8,8,8);
                   obj.position.x = (Math.random() - 0.5) * 1000;
